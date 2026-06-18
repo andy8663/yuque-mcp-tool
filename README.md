@@ -41,14 +41,26 @@ pip install -e .
 
 #### 2. 获取 Session Cookie
 
+**方法一：Application 面板（推荐）**
+
 1. 登录 [语雀](https://www.yuque.com)
 2. 按 `F12` 打开浏览器开发者工具
-3. 在 Console 中输入：
+3. 切换到 **Application**（应用）面板
+4. 左侧展开 **Cookies** → 点击 `https://www.yuque.com`
+5. 在 Cookie 列表中找到 `_yuque_session`，复制其 **Value** 列的值
+
+**方法二：Console 命令**
+
+1. 登录 [语雀](https://www.yuque.com)
+2. 按 `F12` 打开浏览器开发者工具
+3. 在 **Console** 中输入：
    ```javascript
    document.cookie.split('; ').find(c => c.startsWith('_yuque_session=')).split('=')[1]
    ```
 4. 复制输出的值
 
+> ⚠️ 如果 `_yuque_session` 被标记为 `HttpOnly`，方法二将无法读取，请使用方法一。
+>
 > Session Cookie 有效期约 30 天，过期后需重新获取。
 
 #### 3. 配置 MCP 客户端
@@ -200,14 +212,26 @@ pip install -e .
 
 #### 2. Get Your Session Cookie
 
+**Method 1: Application Panel (Recommended)**
+
 1. Log in to [Yuque](https://www.yuque.com)
 2. Press `F12` to open browser DevTools
-3. In the Console, run:
+3. Switch to the **Application** tab
+4. Expand **Cookies** in the left sidebar → click `https://www.yuque.com`
+5. Find `_yuque_session` in the cookie list and copy its **Value**
+
+**Method 2: Console Command**
+
+1. Log in to [Yuque](https://www.yuque.com)
+2. Press `F12` to open browser DevTools
+3. In the **Console**, run:
    ```javascript
    document.cookie.split('; ').find(c => c.startsWith('_yuque_session=')).split('=')[1]
    ```
 4. Copy the output value
 
+> ⚠️ If `_yuque_session` is marked as `HttpOnly`, Method 2 will not work — use Method 1 instead.
+>
 > The session cookie is valid for approximately 30 days.
 
 #### 3. Configure Your MCP Client
