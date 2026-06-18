@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "yuque": {
+      "command": "yuque-mcp",
+      "env": {
+        "YUQUE_SESSION": "YOUR_YUQUE_SESSION",
+        "YUQUE_HOST": "https://www.yuque.com"
+      }
+    }
+  }
+}
